@@ -3,11 +3,11 @@ import Image from "next/image";
 import { css } from "@emotion/react";
 
 const nightMode = css`
-  background-color: #638889;
+  background-color: #472712;
 `;
 
 const lightMode = css`
-  background-color: #f9efdb;
+  background-color: #fff4e5;
 `;
 
 const image = css`
@@ -17,10 +17,15 @@ const image = css`
 
 const ToggleModeButton = ({ mode, setMode }) => {
   const handleClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setMode(!mode);
   };
-  return <button onClick={handleClick}>toggle mode</button>;
+  return (
+    <>
+      <input id="mode" type="checkbox" onChange={handleClick} />
+      <label htmlFor="mode">toggle mode</label>
+    </>
+  );
 };
 
 export default function Home() {
@@ -29,6 +34,9 @@ export default function Home() {
 
   return (
     <main css={modeStyle}>
+      <ToggleModeButton mode={mode} setMode={setMode} />
+      <h1>Coffee Timer</h1>
+      <p>for handdrip</p>
       <Image
         css={image}
         src="/coffee-barista.png"
@@ -37,7 +45,8 @@ export default function Home() {
         alt="hoge"
         priority
       />
-      <ToggleModeButton mode={mode} setMode={setMode} />
+      <button type="button">準備から始める</button>
+      <button type="button">タイマーから始める</button>
     </main>
   );
 }

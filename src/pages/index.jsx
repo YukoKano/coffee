@@ -11,8 +11,87 @@ const lightMode = css`
 `;
 
 const image = css`
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   height: auto;
+`;
+
+const toggleButton = css`
+  display: flex;
+  justify-content: right;
+  padding-top: 16px;
+  padding-right: 16px;
+`;
+
+const input = css`
+  display: none;
+`;
+
+const label = css`
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #bdc1ca;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 4px;
+    background-color: white;
+    border-radius: 50%;
+  }
+`;
+
+const labelNightMode = css`
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #e8b96b;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 4px;
+    background-color: white;
+    border-radius: 50%;
+  }
+`;
+
+const title = css`
+  text-align: center;
+  color: #4b361f;
+  margin-top: 120px;
+`;
+
+const subtitle = css`
+  text-align: center;
+  color: #4b361f;
+`;
+
+const buttonWrap = css`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+  & button {
+    width: 200px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #4b361f;
+    background-color: white;
+  }
 `;
 
 const ToggleModeButton = ({ mode, setMode }) => {
@@ -22,8 +101,8 @@ const ToggleModeButton = ({ mode, setMode }) => {
   };
   return (
     <>
-      <input id="mode" type="checkbox" onChange={handleClick} />
-      <label htmlFor="mode">toggle mode</label>
+      <input css={input} id="mode" type="checkbox" onChange={handleClick} />
+      <label css={mode ? labelNightMode : label} htmlFor="mode" />
     </>
   );
 };
@@ -34,9 +113,11 @@ export default function Home() {
 
   return (
     <main css={modeStyle}>
-      <ToggleModeButton mode={mode} setMode={setMode} />
-      <h1>Coffee Timer</h1>
-      <p>for handdrip</p>
+      <div css={toggleButton}>
+        <ToggleModeButton mode={mode} setMode={setMode} />
+      </div>
+      <h1 css={title}>Coffee Timer</h1>
+      <p css={subtitle}>for handdrip</p>
       <Image
         css={image}
         src="/coffee-barista.png"
@@ -45,8 +126,10 @@ export default function Home() {
         alt="hoge"
         priority
       />
-      <button type="button">準備から始める</button>
-      <button type="button">タイマーから始める</button>
+      <div css={buttonWrap}>
+        <button type="button">準備から始める</button>
+        <button type="button">タイマーから始める</button>
+      </div>
     </main>
   );
 }

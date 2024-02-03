@@ -1,6 +1,7 @@
-import { useState } from "react";
 import Image from "next/image";
 import { css } from "@emotion/react";
+import { useContext } from "react";
+import { ModeContext } from "./modeProvider";
 
 const nightMode = css`
   background-color: #472712;
@@ -94,10 +95,11 @@ const buttonWrap = css`
   }
 `;
 
-const ToggleModeButton = ({ mode, setMode }) => {
-  const handleClick = (e) => {
-    // e.preventDefault();
+const ToggleModeButton = () => {
+  const { mode, setMode } = useContext(ModeContext);
+  const handleClick = () => {
     setMode(!mode);
+    console.log(mode);
   };
   return (
     <>
@@ -108,13 +110,13 @@ const ToggleModeButton = ({ mode, setMode }) => {
 };
 
 export default function Home() {
-  const [mode, setMode] = useState(false);
+  const { mode } = useContext(ModeContext);
   const modeStyle = mode ? nightMode : lightMode;
 
   return (
     <main css={modeStyle}>
       <div css={toggleButton}>
-        <ToggleModeButton mode={mode} setMode={setMode} />
+        <ToggleModeButton />
       </div>
       <h1 css={title}>Coffee Timer</h1>
       <p css={subtitle}>for handdrip</p>

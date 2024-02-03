@@ -30,7 +30,7 @@ export const Title = () => {
   return (
     <>
       <h1 css={titleStyle}>Coffee Timer</h1>
-      <p css={subtitleStyle}>for handdrip</p>
+      <p css={subtitleStyle}>1 cup of hand drip coffee</p>
     </>
   );
 };

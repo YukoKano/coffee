@@ -7,7 +7,7 @@ const image = css`
   height: auto;
 `;
 
-export const TopImage = () => {
+export const KeyVisualImage = () => {
   return (
     <Image
       css={image}

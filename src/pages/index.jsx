@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 import { Title } from "../components/Title";
 import { ToggleModeButton } from "../components/ToggleModeButton";
-import { TopImage } from "../components/TopImage";
+import { KeyVisualImage } from "../components/KeyVisualImage/";
 
 const contents = css`
   max-width: 540px;
@@ -55,7 +55,7 @@ export default function Home() {
         <div css={titleWrap}>
           <Title />
         </div>
-        <TopImage />
+        <KeyVisualImage />
         <div css={buttonWrap}>
           <button type="button" onClick={() => console.log("準備から始める")}>
             準備から始める

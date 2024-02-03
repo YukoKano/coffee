@@ -4,7 +4,7 @@ import "@/styles/global.css";
 import { css } from "@emotion/react";
 
 import { useState } from "react";
-import { modeContext } from "./modeProvider";
+import { modeContext } from "../components/modeProvider";
 
 const nightMode = css`
   background-color: #472712;

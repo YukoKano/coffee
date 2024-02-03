@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 
-import { Title } from "./Title";
-import { ToggleModeButton } from "./ToggleModeButton";
-import { TopImage } from "./TopImage";
+import { Title } from "../components/Title";
+import { ToggleModeButton } from "../components/ToggleModeButton";
+import { TopImage } from "../components/TopImage";
 
 const contents = css`
   max-width: 540px;

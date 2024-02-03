@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Zen+Kaku+Gothic+New&display=swap");
+
 main {
   height: 100vh;
   overflow: hidden;
+  font-family: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 }

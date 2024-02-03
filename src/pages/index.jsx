@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { css } from "@emotion/react";
 import { useContext } from "react";
-import { ModeContext } from "./modeProvider";
+import { modeContext } from "./modeProvider";
+
+import { Title } from "./Title";
 
 const nightMode = css`
   background-color: #472712;
@@ -70,17 +72,6 @@ const labelNightMode = css`
   }
 `;
 
-const title = css`
-  text-align: center;
-  color: #4b361f;
-  margin-top: 120px;
-`;
-
-const subtitle = css`
-  text-align: center;
-  color: #4b361f;
-`;
-
 const buttonWrap = css`
   display: flex;
   align-items: center;
@@ -96,7 +87,7 @@ const buttonWrap = css`
 `;
 
 const ToggleModeButton = () => {
-  const { mode, setMode } = useContext(ModeContext);
+  const { mode, setMode } = useContext(modeContext);
   const handleClick = () => {
     setMode(!mode);
     console.log(mode);
@@ -110,16 +101,15 @@ const ToggleModeButton = () => {
 };
 
 export default function Home() {
-  const { mode } = useContext(ModeContext);
-  const modeStyle = mode ? nightMode : lightMode;
+  const { mode } = useContext(modeContext);
+  const modeStyle = mode ? lightMode : nightMode;
 
   return (
     <main css={modeStyle}>
       <div css={toggleButton}>
         <ToggleModeButton />
       </div>
-      <h1 css={title}>Coffee Timer</h1>
-      <p css={subtitle}>for handdrip</p>
+      <Title />
       <Image
         css={image}
         src="/coffee-barista.png"

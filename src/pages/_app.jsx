@@ -3,7 +3,7 @@ import "@/styles/reset.css";
 import "@/styles/global.css";
 
 import { useState } from "react";
-import { ModeContext } from "./modeProvider";
+import { modeContext } from "./modeProvider";
 
 export default function App({ Component, pageProps }) {
   const [mode, setMode] = useState(true);
@@ -16,9 +16,9 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Providerのvalueは{()}ではなく、{{}} */}
-      <ModeContext.Provider value={{ mode, setMode }}>
+      <modeContext.Provider value={{ mode, setMode }}>
         <Component {...pageProps} />
-      </ModeContext.Provider>
+      </modeContext.Provider>
     </>
   );
 }

@@ -1,30 +1,26 @@
-import Image from "next/image";
 import { css } from "@emotion/react";
-import { useContext } from "react";
-import { modeContext } from "./modeProvider";
 
 import { Title } from "./Title";
 import { ToggleModeButton } from "./ToggleModeButton";
+import { TopImage } from "./TopImage";
 
-const nightMode = css`
-  background-color: #472712;
-`;
-
-const lightMode = css`
-  background-color: #fff4e5;
-`;
-
-const image = css`
+const contents = css`
+  max-width: 540px;
+  height: 100vh;
   margin: 0 auto;
-  width: 80%;
-  height: auto;
+  overflow: hidden;
+  font-family: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 `;
 
-const toggleButtonWrap = css`
+const header = css`
   display: flex;
   justify-content: right;
   padding-top: 16px;
   padding-right: 16px;
+`;
+
+const titleWrap = css`
+  margin-top: 120px;
 `;
 
 const buttonWrap = css`
@@ -41,28 +37,40 @@ const buttonWrap = css`
   }
 `;
 
-export default function Home() {
-  const { mode } = useContext(modeContext);
-  const modeStyle = mode ? lightMode : nightMode;
+const footer = css`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 64px;
+  color: #4b361f;
+`;
 
+export default function Home() {
   return (
-    <main css={modeStyle}>
-      <div css={toggleButtonWrap}>
+    <div css={contents}>
+      <header css={header}>
         <ToggleModeButton />
-      </div>
-      <Title />
-      <Image
-        css={image}
-        src="/coffee-barista.png"
-        width={500}
-        height={500}
-        alt="hoge"
-        priority
-      />
-      <div css={buttonWrap}>
-        <button type="button">準備から始める</button>
-        <button type="button">タイマーから始める</button>
-      </div>
-    </main>
+      </header>
+      <main>
+        <div css={titleWrap}>
+          <Title />
+        </div>
+        <TopImage />
+        <div css={buttonWrap}>
+          <button type="button" onClick={() => console.log("準備から始める")}>
+            準備から始める
+          </button>
+          <button
+            type="button"
+            onClick={() => console.log("タイマーから始める")}
+          >
+            タイマーから始める
+          </button>
+        </div>
+      </main>
+      <footer css={footer}>
+        <small>© 2024 Yuko Kano</small>
+      </footer>
+    </div>
   );
 }

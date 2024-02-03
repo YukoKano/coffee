@@ -56,7 +56,7 @@ export const ToggleModeButton = () => {
   return (
     <>
       <input css={input} id="mode" type="checkbox" onChange={handleClick} />
-      <label css={mode ? labelNightMode : label} htmlFor="mode" />
+      <label css={mode ? label : labelNightMode} htmlFor="mode" />
     </>
   );
 };

@@ -5,13 +5,11 @@ import { modeContext } from "./modeProvider";
 const lightModeTitle = css`
   text-align: center;
   color: #4b361f;
-  margin-top: 120px;
 `;
 
 const darkModeTitle = css`
   text-align: center;
   color: #f3dbb5;
-  margin-top: 120px;
 `;
 
 const lightModeSubtitle = css`

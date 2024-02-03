@@ -7,10 +7,14 @@ import { useState } from "react";
 import { modeContext } from "../components/modeProvider";
 
 const nightMode = css`
+  overflow: hidden;
+  min-height: 100vh;
   background-color: #472712;
 `;
 
 const lightMode = css`
+  min-height: 100vh;
+  overflow: hidden;
   background-color: #fff4e5;
 `;
 

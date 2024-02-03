@@ -2,8 +2,8 @@ import Image from "next/image";
 import { css } from "@emotion/react";
 
 const image = css`
-  margin: 120px auto;
-  width: 50%;
+  margin: 64px auto;
+  width: 160px;
   height: auto;
 `;
 

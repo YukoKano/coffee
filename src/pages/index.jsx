@@ -8,21 +8,20 @@ import { Button } from "@/components/Button";
 
 const contents = css`
   max-width: 540px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
   font-family: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 `;
 
 const titleWrap = css`
-  margin-top: 120px;
+  margin-top: 64px;
 `;
 
 const buttonWrap = css`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 `;
 
 export default function Home() {

@@ -1,15 +1,15 @@
 import { css } from "@emotion/react";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { KeyVisualImage } from "@/components/KeyVisualImage/";
-import { Button } from "@/components/Button";
 
-import { modeContext, setModeContext } from "@/components/modeProvider";
+import { modeContext, setModeContext } from "@/context/modeProvider";
 import { MarginWrapper } from "@/components/MarginWrapper";
+import { StepButtons } from "@/components/StepButtons";
 
 const contents = css`
   max-width: 540px;
@@ -18,24 +18,17 @@ const contents = css`
   font-family: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 `;
 
-const titleWrap = css`
-  margin-top: 64px;
-`;
-
-const buttonWrap = css`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 24px;
+const Mode = css`
+  min-height: 100vh;
 `;
 
 const nightMode = css`
-  min-height: 100vh;
+  ${Mode};
   background-color: #472712;
 `;
 
 const lightMode = css`
-  min-height: 100vh;
+  ${Mode};
   background-color: #fff4e5;
 `;
 
@@ -52,14 +45,13 @@ export default function Home() {
           <div css={contents}>
             <Header />
             <main>
-              <MarginWrapper value={64}>
+              <MarginWrapper value={8}>
                 <Title />
               </MarginWrapper>
               <KeyVisualImage />
-              <div css={buttonWrap}>
-                <Button text="準備から始める" type="primary" />
-                <Button text="タイマーから始める" type="secondary" />
-              </div>
+              <MarginWrapper value={4}>
+                <StepButtons />
+              </MarginWrapper>
             </main>
             <Footer />
           </div>

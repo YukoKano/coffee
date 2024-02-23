@@ -1,5 +1,8 @@
 import { css } from "@emotion/react";
-import { useMode, useSetMode } from "../../context/modeProvider/modeProvider";
+import {
+  useLightMode,
+  useSetMode,
+} from "../../context/modeProvider/modeProvider";
 
 const input = css`
   display: none;
@@ -49,7 +52,7 @@ const labelNightMode = css`
 `;
 
 export const ToggleModeButton = () => {
-  const mode = useMode();
+  const mode = useLightMode();
   const setMode = useSetMode();
 
   const handleClick = () => {

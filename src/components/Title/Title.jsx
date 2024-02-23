@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMode } from "../../context/modeProvider/modeProvider";
+import { useLightMode } from "../../context/modeProvider/modeProvider";
 
 const lightModeTitle = css`
   text-align: center;
@@ -12,7 +12,7 @@ const darkModeTitle = css`
 `;
 
 export const Title = () => {
-  const mode = useMode(); // 1つだけ呼び出す時は{}で括る そうでないとオブジェクトが返る
+  const mode = useLightMode(); // 1つだけ呼び出す時は{}で括る そうでないとオブジェクトが返る
 
   const titleStyle = mode ? lightModeTitle : darkModeTitle;
   const subtitleStyle = mode ? lightModeTitle : darkModeTitle;

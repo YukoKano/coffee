@@ -1,7 +1,7 @@
 import { Children, createContext, use, useContext } from "react";
 
 export const modeContext = createContext();
-export const useMode = () => {
+export const useLightMode = () => {
   return useContext(modeContext);
 };
 export const ModeProvider = ({ children, value }) => {

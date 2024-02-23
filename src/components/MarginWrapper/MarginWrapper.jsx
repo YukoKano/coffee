@@ -6,5 +6,5 @@ const margin = ({ value }) => css`
 
 export const MarginWrapper = ({ children, value }) => {
   return <div css={margin({ value })}>{children}</div>;
-  // value渡せてない……
+  // valueは{{}}で渡すっぽい
 };

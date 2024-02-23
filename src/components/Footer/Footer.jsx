@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMode } from "../../context/modeProvider/modeProvider";
+import { useLightMode } from "../../context/modeProvider/modeProvider";
 
 const lightMode = css`
   display: flex;
@@ -18,7 +18,7 @@ const darkMode = css`
 `;
 
 export const Footer = () => {
-  const mode = useMode();
+  const mode = useLightMode();
   const style = mode ? lightMode : darkMode;
   return (
     <footer css={style}>

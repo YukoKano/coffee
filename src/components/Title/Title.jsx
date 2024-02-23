@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMode } from "../../context/modeProvider";
+import { useMode } from "../../context/modeProvider/modeProvider";
 
 const lightModeTitle = css`
   text-align: center;

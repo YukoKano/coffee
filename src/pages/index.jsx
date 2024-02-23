@@ -7,7 +7,10 @@ import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { KeyVisualImage } from "@/components/KeyVisualImage/";
 
-import { modeContext, setModeContext } from "@/context/modeProvider";
+import {
+  ModeProvider,
+  SetModeProvider,
+} from "@/context/modeProvider/modeProvider";
 import { MarginWrapper } from "@/components/MarginWrapper";
 import { StepButtons } from "@/components/StepButtons";
 
@@ -33,14 +36,12 @@ const lightMode = css`
 `;
 
 export default function Home() {
-  const [mode, setMode] = useState(true); // こんなところでuseState使っていいのか？
+  const [mode, setMode] = useState(true);
   const modeStyle = mode ? lightMode : nightMode;
 
-  /* Providerのvalueは{()}ではなく、{{}} */
-
   return (
-    <modeContext.Provider value={mode}>
-      <setModeContext.Provider value={setMode}>
+    <ModeProvider value={mode}>
+      <SetModeProvider value={setMode}>
         <div css={modeStyle}>
           <div css={contents}>
             <Header />
@@ -56,7 +57,7 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-      </setModeContext.Provider>
-    </modeContext.Provider>
+      </SetModeProvider>
+    </ModeProvider>
   );
 }

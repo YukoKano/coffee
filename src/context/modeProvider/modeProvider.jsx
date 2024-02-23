@@ -1,4 +1,4 @@
-import { Children, createContext, use, useContext } from "react";
+import { createContext, useContext } from "react";
 
 export const modeContext = createContext();
 export const useLightMode = () => {

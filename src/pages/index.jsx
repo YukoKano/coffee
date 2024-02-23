@@ -40,24 +40,22 @@ export default function Home() {
   const modeStyle = mode ? lightMode : nightMode;
 
   return (
-    <ModeProvider value={mode}>
-      <SetModeProvider value={setMode}>
-        <div css={modeStyle}>
-          <div css={contents}>
-            <Header />
-            <main>
-              <MarginWrapper value={8}>
-                <Title />
-              </MarginWrapper>
-              <KeyVisualImage />
-              <MarginWrapper value={4}>
-                <StepButtons />
-              </MarginWrapper>
-            </main>
-            <Footer />
-          </div>
+    <ModeProvider value={mode} setValue={setMode}>
+      <div css={modeStyle}>
+        <div css={contents}>
+          <Header />
+          <main>
+            <MarginWrapper value={8}>
+              <Title />
+            </MarginWrapper>
+            <KeyVisualImage />
+            <MarginWrapper value={4}>
+              <StepButtons />
+            </MarginWrapper>
+          </main>
+          <Footer />
         </div>
-      </SetModeProvider>
+      </div>
     </ModeProvider>
   );
 }

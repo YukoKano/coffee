@@ -4,16 +4,18 @@ export const modeContext = createContext();
 export const useLightMode = () => {
   return useContext(modeContext);
 };
-export const ModeProvider = ({ children, value }) => {
-  return <modeContext.Provider value={value}>{children}</modeContext.Provider>;
-};
 
 export const setModeContext = createContext();
 export const useSetMode = () => {
   return useContext(setModeContext);
 };
-export const SetModeProvider = ({ children, value }) => {
+
+export const ModeProvider = ({ children, value, setValue }) => {
   return (
-    <setModeContext.Provider value={value}>{children}</setModeContext.Provider>
+    <modeContext.Provider value={value}>
+      <setModeContext.Provider value={setValue}>
+        {children}
+      </setModeContext.Provider>
+    </modeContext.Provider>
   );
 };

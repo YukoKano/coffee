@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import {
   useLightMode,
   useSetMode,
-} from "../../context/modeProvider/modeProvider";
+} from "../../context/ModeProvider/ModeProvider";
 
 const input = css`
   display: none;

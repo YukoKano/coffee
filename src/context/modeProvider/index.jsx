@@ -1,1 +1,1 @@
-export * from "./modeProvider";
+export * from "./ModeProvider";

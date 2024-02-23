@@ -10,7 +10,7 @@ import { KeyVisualImage } from "@/components/KeyVisualImage/";
 import {
   ModeProvider,
   SetModeProvider,
-} from "@/context/modeProvider/modeProvider";
+} from "@/context/ModeProvider/ModeProvider";
 import { MarginWrapper } from "@/components/MarginWrapper";
 import { StepButtons } from "@/components/StepButtons";
 

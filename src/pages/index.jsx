@@ -5,12 +5,9 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
-import { KeyVisualImage } from "@/components/KeyVisualImage/";
+import { KeyVisualImage } from "@/components/KeyVisualImage";
 
-import {
-  ModeProvider,
-  SetModeProvider,
-} from "@/context/ModeProvider/ModeProvider";
+import { ModeProvider } from "@/contexts/ModeProvider";
 import { MarginWrapper } from "@/components/MarginWrapper";
 import { StepButtons } from "@/components/StepButtons";
 

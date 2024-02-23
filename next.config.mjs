@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ["coffee.alexflipnote.dev"],
+  },
 };
 
 export default nextConfig;

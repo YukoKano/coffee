@@ -1,8 +1,5 @@
 import { css } from "@emotion/react";
-import {
-  useLightMode,
-  useSetMode,
-} from "../../context/ModeProvider/ModeProvider";
+import { useLightMode, useSetMode } from "@/context/ModeProvider";
 
 const input = css`
   display: none;

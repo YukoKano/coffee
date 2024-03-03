@@ -1,11 +1,12 @@
 import { css } from "@emotion/react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { KeyVisualImage } from "@/components/KeyVisualImage";
+import { Comment } from "@/components/Comment";
 
 import { ModeProvider } from "@/contexts/ModeProvider";
 import { MarginWrapper } from "@/components/MarginWrapper";
@@ -48,6 +49,9 @@ export default function Home() {
             <KeyVisualImage />
             <MarginWrapper value={4}>
               <StepButtons />
+            </MarginWrapper>
+            <MarginWrapper value={4}>
+              <Comment />
             </MarginWrapper>
           </main>
           <Footer />

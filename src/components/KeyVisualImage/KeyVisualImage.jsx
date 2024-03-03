@@ -30,6 +30,7 @@ const fetchData = async () => {
 export const KeyVisualImage = () => {
   const [imagePath, setImagePath] = useState("");
 
+  // componentが表示された後に動く
   useEffect(() => {
     const fetchImageData = async () => {
       try {

@@ -1,5 +1,10 @@
 import { css } from "@emotion/react";
 
+const ButtonType = {
+  primary: "primary",
+  secondary: "secondary",
+};
+
 const primary = css`
   padding: 0 16px;
   display: flex;
@@ -28,14 +33,16 @@ const secondary = css`
   border-radius: 8px;
 `;
 
-export const Button = ({ text, type }) => {
-  let style = "";
-  if (type === "primary") {
-    style = primary;
-  } else if (type === "secondary") {
-    style = secondary;
-  }
+const defineButtonStyle = (type) => {
+  const ButtonStyle = {
+    primary: primary, // cssのprimary
+    secondary: secondary, // cssのsecondary
+  };
+  return ButtonStyle[type] || primary; // なければprimaryを返す
+};
 
+export const Button = ({ text, type }) => {
+  const style = defineButtonStyle(type);
   return (
     <button css={style} type="button" onClick={() => console.log(text)}>
       {text}

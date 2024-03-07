@@ -43,8 +43,10 @@ const defineButtonStyle = (type) => {
 
 export const Button = ({ text, type }) => {
   const style = defineButtonStyle(type);
+  const message = () => console.log(text); // 関数は事前に定義する
+
   return (
-    <button css={style} type="button" onClick={() => console.log(text)}>
+    <button css={style} type="button" onClick={message}>
       {text}
     </button>
   );

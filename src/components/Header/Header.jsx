@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import { ToggleModeButton } from "../ToggleModeButton";
+import { ToggleModeButton } from "@/components/ToggleModeButton";
 
 const header = css`
   display: flex;

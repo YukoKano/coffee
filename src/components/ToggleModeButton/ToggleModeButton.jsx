@@ -5,12 +5,13 @@ const input = css`
   display: none;
 `;
 
-const label = css`
+const label = (mode) => css`
   position: relative;
   display: block;
   width: 64px;
   height: 32px;
   border-radius: 16px;
+  background-color: ${mode ? "#e8b96b" : "#9d7755"};
   &::after {
     content: "";
     position: absolute;
@@ -19,32 +20,13 @@ const label = css`
     height: 24px;
     transform: translateY(-50%);
     top: 50%;
-    left: 4px;
+    left: ${mode ? "4px" : "auto"};
+    right: ${mode ? "auto" : "4px"};
     background-color: white;
     border-radius: 50%;
-    background-image: url("sun.png");
+    background-image: url("${mode ? "sun" : "moon"}.png");
     background-position: center;
     background-size: contain;
-  }
-`;
-
-const labelLightMode = css`
-  ${label};
-  background-color: #e8b96b;
-  &::after {
-    right: auto;
-    left: 4px;
-    background-image: url("sun.png");z
-  }
-`;
-
-const labelNightMode = css`
-  ${label};
-  background-color: #9d7755;
-  &::after {
-    left: auto;
-    right: 4px;
-    background-image: url("moon.png");
   }
 `;
 
@@ -55,10 +37,11 @@ export const ToggleModeButton = () => {
   const handleClick = () => {
     setMode(!mode);
   };
+
   return (
     <>
       <input css={input} id="mode" type="checkbox" onChange={handleClick} />
-      <label css={mode ? labelLightMode : labelNightMode} htmlFor="mode" />
+      <label css={label(mode)} htmlFor="mode" />
     </>
   );
 };

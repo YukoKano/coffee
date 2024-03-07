@@ -1,26 +1,19 @@
 import { css } from "@emotion/react";
 import { useLightMode } from "@/contexts/ModeProvider";
 
-const lightModeTitle = css`
+const modeTitle = (mode) => css`
   text-align: center;
-  color: #4b361f;
-`;
-
-const darkModeTitle = css`
-  text-align: center;
-  color: #f3dbb5;
+  color: ${mode ? "#4b361fx" : "#f3dbb5"};
 `;
 
 export const Title = () => {
   const mode = useLightMode(); // 1つだけ呼び出す時は{}で括る そうでないとオブジェクトが返る
-
-  const titleStyle = mode ? lightModeTitle : darkModeTitle;
-  const subtitleStyle = mode ? lightModeTitle : darkModeTitle;
+  const style = modeTitle(mode);
 
   return (
     <>
-      <h1 css={titleStyle}>Coffee Timer</h1>
-      <p css={subtitleStyle}>1 cup of hand drip coffee</p>
+      <h1 css={style}>Coffee Timer</h1>
+      <p css={style}>1 cup of hand drip coffee</p>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -50,7 +50,7 @@ export default function Home() {
             <MarginWrapper value={4}>
               <StepButtons />
             </MarginWrapper>
-            <MarginWrapper value={4}>
+            <MarginWrapper value={6}>
               <Comment />
             </MarginWrapper>
           </main>
